@@ -63,6 +63,7 @@ class _Kernel(object):
             self.k = k
         if points is None:
             self.dmat = cdist(self.data, self.data)
+            self.dmat = self.dmat / np.max(self.dmat)
         else:
             self.points = points
             self.dmat = cdist(self.points, self.data)
